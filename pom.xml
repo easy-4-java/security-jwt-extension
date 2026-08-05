@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <spring-security.version>5.6.0</spring-security.version>
-        <spring-security-extension.version>1.0.x-SNAPSHOT</spring-security-extension.version>
+        <spring-security-extension.version>3.0.x.20260630-SNAPSHOT</spring-security-extension.version>
     </properties>
 
     <dependencies>
