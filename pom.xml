@@ -9,7 +9,7 @@
 
     <name>Security JWT SDK</name>
     <description>JWT authentication and authorization utilities for Spring Security</description>
-    <developers>
+        <developers>
         <developer>
             <name>Loong Wan</name>
             <email>hiwepy@gmail.com</email>
