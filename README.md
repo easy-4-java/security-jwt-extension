@@ -2,6 +2,8 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
+[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/security-jwt-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
 JWT authentication and authorization utilities for Spring Security. This module extends the Spring Security authentication model with JWT-aware tokens and filters, for both the servlet (Web) and reactive (WebFlux) stacks.
 
 ## Table of Contents

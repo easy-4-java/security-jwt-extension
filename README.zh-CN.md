@@ -2,6 +2,8 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
+[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/security-jwt-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
 面向 Spring Security 的 JWT 认证与授权工具。本模块为 Spring Security 认证模型补充 JWT 感知的 Token 与过滤器，同时覆盖 Servlet（Web）与响应式（WebFlux）技术栈。
 
 ## 目录
