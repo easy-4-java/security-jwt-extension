@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JwtAuthenticationToken.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.easy4j:security-jwt-extension</a> &gt; <a href="index.source.html" class="el_package">org.springframework.security.boot.jwt.authentication</a> &gt; <span class="el_source">JwtAuthenticationToken.java</span></div><h1>JwtAuthenticationToken.java</h1><pre class="source lang-java linenums">/*
+ * Copyright (c) 2018-present, easy-4-java (https://github.com/easy-4-java).
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.springframework.security.boot.jwt.authentication;
+
+import java.util.Collection;
+
+import org.springframework.security.authentication.AbstractAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+
+/**
+ * Spring Security {@link AbstractAuthenticationToken} carrying the
+ * authentication-time credentials of a JSON Web Token (JWT) login attempt.
+ *
+ * &lt;p&gt;This token is produced by the JWT authentication entry-point and is
+ * consumed by an {@code AuthenticationManager} (or a dedicated
+ * {@code AuthenticationProvider}). Its lifecycle mirrors the canonical
+ * {@code UsernamePasswordAuthenticationToken}: an unauthenticated instance is
+ * built from the raw request payload, then a second authenticated instance
+ * is constructed by the manager once the JWT signature has been validated
+ * and the principal has been resolved.&lt;/p&gt;
+ *
+ * &lt;p&gt;In addition to the standard principal/credentials pair, the token
+ * carries a few optional request-side hints:&lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link #sign} &amp;mdash; the request parameter signature used by the
+ *       replay-protection layer;&lt;/li&gt;
+ *   &lt;li&gt;{@link #longitude} / {@link #latitude} &amp;mdash; the latest known
+ *       geo-location of the user device, which may be validated by a
+ *       location-aware authentication provider.&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * &lt;p&gt;For authorization flows that only require a principal (already trusted),
+ * prefer {@link JwtAuthorizationToken}.&lt;/p&gt;
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 3.0.0
+ * @see JwtAuthorizationToken
+ * @see AbstractAuthenticationToken
+ */
+@SuppressWarnings(&quot;serial&quot;)
+public class JwtAuthenticationToken extends AbstractAuthenticationToken {
+
+	// ~ Instance fields
+	// ================================================================================================
+
+	/**
+	 * The authenticated principal (typically a username, user-id, or a fully
+	 * resolved {@code UserDetails} instance after authentication). Immutable
+	 * for the lifetime of this token.
+	 */
+	private final Object principal;
+
+	/**
+	 * The raw credentials supplied with the login attempt &amp;mdash; usually the
+	 * bearer JWT string. Cleared by {@link #eraseCredentials()} once the
+	 * token has been authenticated.
+	 */
+	private Object credentials;
+
+	/**
+	 * Optional request parameter signature used for replay-protection /
+	 * anti-tamper checks. May be {@code null} when the caller does not
+	 * participate in the signing scheme.
+	 */
+	private String sign;
+
+	/**
+	 * Optional latest known longitude of the user device, expressed in
+	 * decimal degrees. Defaults to {@code 0.0} when not supplied.
+	 */
+	private double longitude;
+
+	/**
+	 * Optional latest known latitude of the user device, expressed in
+	 * decimal degrees. Defaults to {@code 0.0} when not supplied.
+	 */
+	private double latitude;
+
+	// ~ Constructors
+	// ===================================================================================================
+
+	/**
+	 * Builds an unauthenticated token from the raw principal/credentials pair
+	 * extracted from the incoming request. {@link #isAuthenticated()} returns
+	 * {@code false} for instances created through this constructor.
+	 *
+	 * @param principal   the user identity to authenticate; typically a
+	 *                    username or user-id string, never {@code null}.
+	 * @param credentials the credentials proving the principal's identity,
+	 *                    usually a JWT bearer string, never {@code null}.
+	 */
+	public JwtAuthenticationToken(Object principal, Object credentials) {
+<span class="fc" id="L106">		super(null);</span>
+<span class="fc" id="L107">		this.principal = principal;</span>
+<span class="fc" id="L108">		this.credentials = credentials;</span>
+<span class="fc" id="L109">		setAuthenticated(false);</span>
+<span class="fc" id="L110">	}</span>
+
+	/**
+	 * Builds a trusted (already-authenticated) token. Should only be invoked
+	 * by an {@code AuthenticationManager} or {@code AuthenticationProvider}
+	 * implementation that has just verified the JWT signature.
+	 *
+	 * @param principal   the resolved principal (often a {@code UserDetails}),
+	 *                    never {@code null}.
+	 * @param credentials the original bearer token; may be {@code null} if
+	 *                    the manager has already erased sensitive material.
+	 * @param authorities the granted authorities for the authenticated user,
+	 *                    may be {@code null} or empty when the user has no
+	 *                    role mappings.
+	 */
+	public JwtAuthenticationToken(Object principal, Object credentials,
+			Collection&lt;? extends GrantedAuthority&gt; authorities) {
+<span class="fc" id="L127">		super(authorities);</span>
+<span class="fc" id="L128">		this.principal = principal;</span>
+<span class="fc" id="L129">		this.credentials = credentials;</span>
+<span class="fc" id="L130">		super.setAuthenticated(true); // must use super, as we override</span>
+<span class="fc" id="L131">	}</span>
+
+	// ~ Methods
+	// ========================================================================================================
+
+	/**
+	 * Returns the credentials that were supplied with this authentication
+	 * attempt, typically the bearer JWT string.
+	 *
+	 * @return the credentials object, possibly {@code null} after
+	 *         {@link #eraseCredentials()} has been invoked.
+	 */
+	public Object getCredentials() {
+<span class="fc" id="L144">		return this.credentials;</span>
+	}
+
+	/**
+	 * Returns the principal associated with this authentication request.
+	 *
+	 * @return the principal object; never {@code null}.
+	 */
+	public Object getPrincipal() {
+<span class="fc" id="L153">		return this.principal;</span>
+	}
+
+	/**
+	 * Always rejects a {@code true} transition &amp;mdash; callers must
+	 * construct a fresh authenticated token via
+	 * {@link #JwtAuthenticationToken(Object, Object, Collection)} instead.
+	 *
+	 * @param isAuthenticated {@code true} would mark the token as trusted;
+	 *                        this implementation refuses and throws.
+	 * @throws IllegalArgumentException when {@code isAuthenticated} is
+	 *                                  {@code true}.
+	 */
+	public void setAuthenticated(boolean isAuthenticated) throws IllegalArgumentException {
+<span class="fc bfc" id="L167" title="All 2 branches covered.">		if (isAuthenticated) {</span>
+<span class="fc" id="L168">			throw new IllegalArgumentException(</span>
+					&quot;Cannot set this token to trusted - use constructor which takes a GrantedAuthority list instead&quot;);
+		}
+
+<span class="fc" id="L172">		super.setAuthenticated(false);</span>
+<span class="fc" id="L173">	}</span>
+
+	/**
+	 * Clears sensitive material from this token. Invoked by the Spring
+	 * Security framework after the authentication result has been returned
+	 * to the caller, so that the bearer JWT is not retained any longer than
+	 * necessary.
+	 */
+	@Override
+	public void eraseCredentials() {
+<span class="fc" id="L183">		super.eraseCredentials();</span>
+<span class="fc" id="L184">		credentials = null;</span>
+<span class="fc" id="L185">	}</span>
+
+	/**
+	 * Returns the optional request parameter signature attached to the
+	 * authentication attempt.
+	 *
+	 * @return the signature string, or {@code null} if none was provided.
+	 */
+	public String getSign() {
+<span class="fc" id="L194">		return sign;</span>
+	}
+
+	/**
+	 * Stores an optional request parameter signature on this token.
+	 *
+	 * @param sign the signature, typically produced by the caller using a
+	 *             shared secret; may be {@code null}.
+	 */
+	public void setSign(String sign) {
+<span class="fc" id="L204">		this.sign = sign;</span>
+<span class="fc" id="L205">	}</span>
+
+	/**
+	 * Returns the latest known longitude of the user device.
+	 *
+	 * @return longitude in decimal degrees; defaults to {@code 0.0}.
+	 */
+	public double getLongitude() {
+<span class="fc" id="L213">		return longitude;</span>
+	}
+
+	/**
+	 * Stores the latest known longitude of the user device.
+	 *
+	 * @param longitude decimal-degree longitude in the range
+	 *                  {@code [-180.0, +180.0]}; values outside that range
+	 *                  are accepted but should be rejected by the
+	 *                  authentication provider.
+	 */
+	public void setLongitude(double longitude) {
+<span class="fc" id="L225">		this.longitude = longitude;</span>
+<span class="fc" id="L226">	}</span>
+
+	/**
+	 * Returns the latest known latitude of the user device.
+	 *
+	 * @return latitude in decimal degrees; defaults to {@code 0.0}.
+	 */
+	public double getLatitude() {
+<span class="fc" id="L234">		return latitude;</span>
+	}
+
+	/**
+	 * Stores the latest known latitude of the user device.
+	 *
+	 * @param latitude decimal-degree latitude in the range
+	 *                 {@code [-90.0, +90.0]}; values outside that range are
+	 *                 accepted but should be rejected by the authentication
+	 *                 provider.
+	 */
+	public void setLatitude(double latitude) {
+<span class="fc" id="L246">		this.latitude = latitude;</span>
+<span class="fc" id="L247">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.15.202606040825</span></div></body></html>

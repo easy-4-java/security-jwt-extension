@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JwtAuthenticationWebFilter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">io.github.easy4j:security-jwt-extension</a> &gt; <a href="index.source.html" class="el_package">org.springframework.security.boot.jwt.authentication.server</a> &gt; <span class="el_source">JwtAuthenticationWebFilter.java</span></div><h1>JwtAuthenticationWebFilter.java</h1><pre class="source lang-java linenums">/*
+ * Copyright (c) 2018-present, easy-4-java (https://github.com/easy-4-java).
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.springframework.security.boot.jwt.authentication.server;
+
+import org.springframework.security.authentication.ReactiveAuthenticationManager;
+import org.springframework.security.web.server.authentication.AuthenticationWebFilter;
+
+/**
+ * Reactive JWT authentication filter that intercepts incoming WebFlux
+ * requests and delegates them to a {@link ReactiveAuthenticationManager}.
+ *
+ * &lt;p&gt;This filter is intentionally minimal: it extends Spring Security's
+ * {@link AuthenticationWebFilter} so that it inherits the framework's
+ * standard conversion between HTTP authentication requests and
+ * {@code Authentication} objects, while leaving the actual JWT parsing,
+ * signature verification and principal resolution to a configurable
+ * {@code ReactiveAuthenticationManager} supplied at construction time.&lt;/p&gt;
+ *
+ * &lt;p&gt;The filter is wired up by the surrounding application &amp;mdash; typically
+ * inside a {@code SecurityWebFilterChain} bean &amp;mdash; and once registered
+ * it will:&lt;/p&gt;
+ * &lt;ol&gt;
+ *   &lt;li&gt;convert each inbound exchange into an authentication request,&lt;/li&gt;
+ *   &lt;li&gt;delegate to the configured manager,&lt;/li&gt;
+ *   &lt;li&gt;populate the reactive {@code SecurityContext} on success.&lt;/li&gt;
+ * &lt;/ol&gt;
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 3.0.0
+ * @see AuthenticationWebFilter
+ * @see ReactiveAuthenticationManager
+ */
+public class JwtAuthenticationWebFilter extends AuthenticationWebFilter {
+
+	/**
+	 * Constructs a new JWT authentication filter that delegates to the
+	 * supplied {@link ReactiveAuthenticationManager}.
+	 *
+	 * @param authenticationManager the reactive manager responsible for
+	 *                              validating the JWT and resolving the
+	 *                              principal; must not be {@code null}.
+	 */
+	public JwtAuthenticationWebFilter(ReactiveAuthenticationManager authenticationManager) {
+<span class="fc" id="L57">		super(authenticationManager);</span>
+<span class="fc" id="L58">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.15.202606040825</span></div></body></html>

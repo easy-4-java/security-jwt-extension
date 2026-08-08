@@ -1,0 +1,3 @@
+org.springframework.security.boot.jwt.authentication
+org.springframework.security.boot.jwt.authentication.server
+org.springframework.security.boot.jwt.endpoint

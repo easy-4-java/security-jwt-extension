@@ -1,0 +1,78 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'/Users/wandl/.m2/repository/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar:/Users/wandl/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar:/Users/wandl/.m2/repository/org/springframework/security/spring-security-core/5.6.0/spring-security-core-5.6.0.jar:/Users/wandl/.m2/repository/org/springframework/security/spring-security-crypto/5.6.0/spring-security-crypto-5.6.0.jar:/Users/wandl/.m2/repository/org/springframework/spring-aop/5.3.13/spring-aop-5.3.13.jar:/Users/wandl/.m2/repository/org/springframework/spring-beans/5.3.13/spring-beans-5.3.13.jar:/Users/wandl/.m2/repository/org/springframework/spring-context/5.3.13/spring-context-5.3.13.jar:/Users/wandl/.m2/repository/org/springframework/spring-core/5.3.13/spring-core-5.3.13.jar:/Users/wandl/.m2/repository/org/springframework/spring-jcl/5.3.13/spring-jcl-5.3.13.jar:/Users/wandl/.m2/repository/org/springframework/spring-expression/5.3.13/spring-expression-5.3.13.jar:/Users/wandl/.m2/repository/org/springframework/spring-web/5.3.39/spring-web-5.3.39.jar:/Users/wandl/.m2/repository/org/springframework/spring-webflux/5.3.39/spring-webflux-5.3.39.jar:/Users/wandl/.m2/repository/io/projectreactor/reactor-core/3.4.41/reactor-core-3.4.41.jar:/Users/wandl/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/wandl/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/wandl/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/Users/wandl/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/wandl/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/Users/wandl/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar:/Users/wandl/.m2/repository/io/github/easy4j/spring-security-extension/3.0.x.20260630-SNAPSHOT/spring-security-extension-3.0.x.20260630-SNAPSHOT.jar:/Users/wandl/.m2/repository/org/springframework/security/spring-security-config/6.4.4/spring-security-config-6.4.4.jar:/Users/wandl/.m2/repository/org/springframework/security/spring-security-messaging/6.4.4/spring-security-messaging-6.4.4.jar:/Users/wandl/.m2/repository/org/springframework/spring-messaging/6.2.4/spring-messaging-6.2.4.jar:/Users/wandl/.m2/repository/org/springframework/security/spring-security-aspects/6.4.4/spring-security-aspects-6.4.4.jar:/Users/wandl/.m2/repository/org/aspectj/aspectjrt/1.9.22.1/aspectjrt-1.9.22.1.jar:/Users/wandl/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/wandl/.m2/repository/com/alibaba/fastjson2/fastjson2/2.0.52/fastjson2-2.0.52.jar:/Users/wandl/.m2/repository/io/swagger/swagger-annotations/1.6.4/swagger-annotations-1.6.4.jar:/Users/wandl/.m2/repository/io/github/easy4j/jwt-issuer-api/3.0.x.20260630-SNAPSHOT/jwt-issuer-api-3.0.x.20260630-SNAPSHOT.jar:/Users/wandl/.m2/repository/com/alibaba/fastjson/2.0.62/fastjson-2.0.62.jar:/Users/wandl/.m2/repository/com/alibaba/fastjson2/fastjson2-extension/2.0.62/fastjson2-extension-2.0.62.jar:/Users/wandl/.m2/repository/org/springframework/security/spring-security-web/5.6.0/spring-security-web-5.6.0.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/src/main/java:/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'io.github.easy4j:security-jwt-extension 3.0.x.20260630-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'io.github.easy4j:security-jwt-extension 3.0.x.20260630-SNAPSHOT API'
+org.springframework.security.boot.jwt.endpoint
+org.springframework.security.boot.jwt.authentication.server
+org.springframework.security.boot.jwt.authentication
+/Users/wandl/.m2/repository/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar = 1786108881064
+/Users/wandl/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar = 1786108877849
+/Users/wandl/.m2/repository/org/springframework/security/spring-security-core/5.6.0/spring-security-core-5.6.0.jar = 1786109929237
+/Users/wandl/.m2/repository/org/springframework/security/spring-security-crypto/5.6.0/spring-security-crypto-5.6.0.jar = 1786109929772
+/Users/wandl/.m2/repository/org/springframework/spring-aop/5.3.13/spring-aop-5.3.13.jar = 1786108946547
+/Users/wandl/.m2/repository/org/springframework/spring-beans/5.3.13/spring-beans-5.3.13.jar = 1786108937341
+/Users/wandl/.m2/repository/org/springframework/spring-context/5.3.13/spring-context-5.3.13.jar = 1786108941692
+/Users/wandl/.m2/repository/org/springframework/spring-core/5.3.13/spring-core-5.3.13.jar = 1786108935126
+/Users/wandl/.m2/repository/org/springframework/spring-jcl/5.3.13/spring-jcl-5.3.13.jar = 1786108938955
+/Users/wandl/.m2/repository/org/springframework/spring-expression/5.3.13/spring-expression-5.3.13.jar = 1786108934761
+/Users/wandl/.m2/repository/org/springframework/spring-web/5.3.39/spring-web-5.3.39.jar = 1786108973955
+/Users/wandl/.m2/repository/org/springframework/spring-webflux/5.3.39/spring-webflux-5.3.39.jar = 1786109248013
+/Users/wandl/.m2/repository/io/projectreactor/reactor-core/3.4.41/reactor-core-3.4.41.jar = 1786109930198
+/Users/wandl/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar = 1786108925799
+/Users/wandl/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar = 1786108882738
+/Users/wandl/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar = 1786108879011
+/Users/wandl/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar = 1786108878392
+/Users/wandl/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar = 1786108879930
+/Users/wandl/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar = 1786108880654
+/Users/wandl/.m2/repository/io/github/easy4j/spring-security-extension/3.0.x.20260630-SNAPSHOT/spring-security-extension-3.0.x.20260630-SNAPSHOT.jar = 1786110247658
+/Users/wandl/.m2/repository/org/springframework/security/spring-security-config/6.4.4/spring-security-config-6.4.4.jar = 1786109930057
+/Users/wandl/.m2/repository/org/springframework/security/spring-security-messaging/6.4.4/spring-security-messaging-6.4.4.jar = 1786109929090
+/Users/wandl/.m2/repository/org/springframework/spring-messaging/6.2.4/spring-messaging-6.2.4.jar = 1786109930250
+/Users/wandl/.m2/repository/org/springframework/security/spring-security-aspects/6.4.4/spring-security-aspects-6.4.4.jar = 1786109930105
+/Users/wandl/.m2/repository/org/aspectj/aspectjrt/1.9.22.1/aspectjrt-1.9.22.1.jar = 1786109929752
+/Users/wandl/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar = 1786109279833
+/Users/wandl/.m2/repository/com/alibaba/fastjson2/fastjson2/2.0.52/fastjson2-2.0.52.jar = 1786108884264
+/Users/wandl/.m2/repository/io/swagger/swagger-annotations/1.6.4/swagger-annotations-1.6.4.jar = 1786110106415
+/Users/wandl/.m2/repository/io/github/easy4j/jwt-issuer-api/3.0.x.20260630-SNAPSHOT/jwt-issuer-api-3.0.x.20260630-SNAPSHOT.jar = 1786110247371
+/Users/wandl/.m2/repository/com/alibaba/fastjson/2.0.62/fastjson-2.0.62.jar = 1786109211884
+/Users/wandl/.m2/repository/com/alibaba/fastjson2/fastjson2-extension/2.0.62/fastjson2-extension-2.0.62.jar = 1786109212439
+/Users/wandl/.m2/repository/org/springframework/security/spring-security-web/5.6.0/spring-security-web-5.6.0.jar = 1786109929214
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/src/main/java = 1782523932924
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/generated-sources/annotations = 1786201875693
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/tag-search-index.js = 1786201879651
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/overview-tree.html = 1786201879639
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/module-search-index.js = 1786201879650
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/index.html = 1786201879640
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/package-search-index.js = 1786201879651
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/serialized-form.html = 1786201879630
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/index-all.html = 1786201879658
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/allpackages-index.html = 1786201879650
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/member-search-index.js = 1786201879651
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/overview-summary.html = 1786201879660
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/help-doc.html = 1786201879661
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/element-list = 1786201879612
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/search.html = 1786201879659
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/allclasses-index.html = 1786201879649
+/Users/wandl/workspaces/workspace-github-easy-4-java/security-jwt-extension/target/reports/apidocs/type-search-index.js = 1786201879651
