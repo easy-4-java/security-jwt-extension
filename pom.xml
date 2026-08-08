@@ -59,6 +59,7 @@
         <maven-jacoco-plugin.version>0.8.15</maven-jacoco-plugin.version>
     
 		<spring-framework.version>5.3.39</spring-framework.version>
+        <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
 		<javax-servlet-api.version>4.0.1</javax-servlet-api.version></properties>
 
     <!-- 依赖版本统一管理（dependencyManagement） -->
