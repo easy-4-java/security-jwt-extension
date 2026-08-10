@@ -38,7 +38,7 @@ import org.springframework.security.web.server.authentication.AuthenticationWebF
  *   <li>populate the reactive {@code SecurityContext} on success.</li>
  * </ol>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see AuthenticationWebFilter
  * @see ReactiveAuthenticationManager

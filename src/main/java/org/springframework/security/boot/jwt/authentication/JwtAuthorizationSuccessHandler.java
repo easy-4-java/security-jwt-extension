@@ -42,7 +42,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
  * exists for the request, {@link #clearAuthenticationAttributes(HttpServletRequest)}
  * is a no-op.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see AuthenticationSuccessHandler
  * @see WebAttributes#AUTHENTICATION_EXCEPTION

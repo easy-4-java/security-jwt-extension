@@ -28,7 +28,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 /**
  * TODO
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 public class JwtAuthorizationSuccessHandler implements AuthenticationSuccessHandler {
 

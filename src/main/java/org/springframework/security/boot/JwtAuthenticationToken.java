@@ -22,7 +22,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 /**
  * Jwt认证 (authentication) Token
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @SuppressWarnings("serial")
 public class JwtAuthenticationToken extends AbstractAuthenticationToken {

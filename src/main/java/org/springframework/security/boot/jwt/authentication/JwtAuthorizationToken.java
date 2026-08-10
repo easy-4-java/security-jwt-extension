@@ -39,7 +39,7 @@ import org.springframework.security.core.GrantedAuthority;
  * fields allow the request to carry replay-protection and geo-location hints
  * that downstream authorization filters can inspect.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see JwtAuthenticationToken
  * @see AbstractAuthenticationToken

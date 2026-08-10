@@ -45,7 +45,7 @@ import org.springframework.security.core.GrantedAuthority;
  * <p>For authorization flows that only require a principal (already trusted),
  * prefer {@link JwtAuthorizationToken}.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 3.0.0
  * @see JwtAuthorizationToken
  * @see AbstractAuthenticationToken
