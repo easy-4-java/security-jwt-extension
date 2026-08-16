@@ -46,7 +46,7 @@
             <!-- Dependency versions -->
             <commons-lang3.version>3.20.0</commons-lang3.version>
             <easy4j-spring-security-extension.version>3.0.x.20260630-SNAPSHOT</easy4j-spring-security-extension.version>
-            <jackson.version>2.17.2</jackson.version>
+            <jackson-bom.version>3.2.1</jackson-bom.version>
             <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
             <junit-jupiter.version>6.1.0</junit-jupiter.version>
             <lombok.version>1.18.46</lombok.version>
@@ -98,11 +98,13 @@
                 <version>${spring-framework.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <!-- For Jackson -->
+            <!-- For Jackson BOM -->
             <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
+                <groupId>tools.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <!-- For Commons Lang3 -->
             <dependency>
@@ -183,7 +185,7 @@
         </dependency>
         <!-- For Jackson -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
+            <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
         <!-- For Commons Lang3 -->
