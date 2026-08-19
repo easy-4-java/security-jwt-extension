@@ -8,7 +8,6 @@
     <version>1.0.x.20260630-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>JWT authentication and authorization utilities for Spring Security</description>
-
     <!-- 开源协议采用 Apache 2.0 协议 -->
     <licenses>
         <license>
@@ -16,7 +15,6 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
-
     <!-- 源码仓库（SCM）信息 -->
     <scm>
         <connection>scm:git:https://github.com/easy-4-java/${project.artifactId}.git</connection>
@@ -24,7 +22,6 @@
         <url>https://github.com/easy-4-java/${project.artifactId}</url>
         <tag>${project.artifactId}</tag>
     </scm>
-
     <!-- 开发者信息 -->
     <developers>
         <developer>
@@ -37,34 +34,31 @@
             <timezone>+8</timezone>
         </developer>
     </developers>
-
     <!-- 版本属性定义：Java 版本、依赖版本与 Maven 插件版本统一管理 -->
     <properties>
         <!-- ═══ 第一段: 基础属性（自然排序）═══ -->
-            <java.version>1.8</java.version>
-            <maven.compiler.release>${java.version}</maven.compiler.release>
+        <java.version>1.8</java.version>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
         <maven.version>3.9.16</maven.version>
-            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-            <!-- Dependency versions -->
-            <commons-lang3.version>3.20.0</commons-lang3.version>
-            <easy4j-spring-security-extension.version>1.0.x.20260630-SNAPSHOT</easy4j-spring-security-extension.version>
-            <jackson.version>2.17.2</jackson.version>
-            <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-            <junit-jupiter.version>5.11.4</junit-jupiter.version>
-            <lombok.version>1.18.46</lombok.version>
-            <slf4j.version>2.0.18</slf4j.version>
-            <spring-framework.version>5.3.39</spring-framework.version>
-            <spring-security.version>5.6.0</spring-security.version>
-            <!-- Maven Plugin versions -->
-            <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
-            <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
-            <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-            <maven-jacoco-plugin.version>0.8.15</maven-jacoco-plugin.version>
-            <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
-            <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
-    
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Dependency versions -->
+        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <easy4j-spring-security-extension.version>1.0.x.20260630-SNAPSHOT</easy4j-spring-security-extension.version>
+        <jackson.version>2.17.2</jackson.version>
+        <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
+        <junit-jupiter.version>5.11.4</junit-jupiter.version>
+        <lombok.version>1.18.46</lombok.version>
+        <slf4j.version>2.0.18</slf4j.version>
+        <spring-framework.version>5.3.39</spring-framework.version>
+        <spring-security.version>5.6.0</spring-security.version>
+        <!-- Maven Plugin versions -->
+        <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <maven-jacoco-plugin.version>0.8.15</maven-jacoco-plugin.version>
+        <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
     </properties>
-
     <!-- 依赖版本统一管理（dependencyManagement） -->
     <dependencyManagement>
         <dependencies>
@@ -133,7 +127,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <!-- 项目依赖（dependencies） -->
     <dependencies>
         <!-- For Lombok -->
@@ -190,12 +183,10 @@
             <artifactId>spring-security-web</artifactId>
         </dependency>
     </dependencies>
-
     <!-- 构建配置（Build） -->
     <build>
         <pluginManagement>
             <plugins>
-
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <plugin>
                     <!-- 编译插件：编译主代码至主输出目录 -->
@@ -203,12 +194,11 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
                     <configuration>
-                    </configuration>
+                                        </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
-
             <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
             <plugin>
                 <!-- 覆盖率插件：生成覆盖率报告并校验测试覆盖率（目标 90%） -->
@@ -253,7 +243,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
             <plugin>
                 <!-- 编译插件：编译主代码至主输出目录 -->
@@ -276,7 +265,6 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-
             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
             <plugin>
                 <!-- 文档插件：发布时自动生成 Javadoc 并发布 -->
@@ -296,7 +284,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
             <plugin>
                 <!-- 源码插件：发布时自动将源码同时发布 -->
@@ -314,7 +301,6 @@
             </plugin>
         </plugins>
     </build>
-
     <!-- 制品发布仓库配置（distributionManagement） -->
     <distributionManagement>
         <repository>
@@ -326,16 +312,13 @@
             <url>https://packages.aliyun.com/6927b116e6c3e0425dbdf60d/maven/2624322-snapshot-3eoov3</url>
         </snapshotRepository>
     </distributionManagement>
-
     <!-- 构建 Profile 配置 -->
     <profiles>
         <!-- 发布到 Maven Central Portal：mvn -Pcentral deploy（GPG 签名 + 源码 + Javadoc + Central 发布插件） -->
-
         <profile>
             <id>central</id>
             <build>
                 <plugins>
-
                     <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin -->
                     <plugin>
                         <!-- 签名插件：对制品进行 PGP 签名 -->
@@ -352,7 +335,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
                     <!-- https://mvnrepository.com/artifact/org.sonatype.central/central-publishing-maven-plugin -->
                     <plugin>
                         <!-- 发布插件：将制品发布到 Maven Central Portal -->
