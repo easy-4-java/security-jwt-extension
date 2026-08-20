@@ -1,6 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-io.github.easy4j:security-jwt-extension,org.springframework.security.boot.jwt.authentication,JwtAuthorizationSuccessHandler,0,18,0,2,0,9,0,4,0,3
-io.github.easy4j:security-jwt-extension,org.springframework.security.boot.jwt.authentication,JwtAuthenticationToken,0,70,0,2,0,28,0,13,0,12
-io.github.easy4j:security-jwt-extension,org.springframework.security.boot.jwt.authentication,JwtAuthorizationToken,0,72,0,2,0,29,0,13,0,12
-io.github.easy4j:security-jwt-extension,org.springframework.security.boot.jwt.authentication.server,JwtAuthenticationWebFilter,0,4,0,0,0,2,0,1,0,1
-io.github.easy4j:security-jwt-extension,org.springframework.security.boot.jwt.endpoint,RefreshTokenEndpoint,0,3,0,0,0,2,0,1,0,1
