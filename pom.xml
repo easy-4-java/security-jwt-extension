@@ -38,7 +38,7 @@
         <maven.version>3.9.16</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         
-        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <commons-lang3.version>3.18.0</commons-lang3.version>
         <easy4j-spring-security-extension.version>2.0.x.20260630-SNAPSHOT</easy4j-spring-security-extension.version>
         <jackson.version>2.17.2</jackson.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
