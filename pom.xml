@@ -42,7 +42,7 @@
         <maven.version>4.0.0-rc-5</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Dependency versions -->
-        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <commons-lang3.version>3.18.0</commons-lang3.version>
         <easy4j-spring-security-extension.version>3.0.x.20260630-SNAPSHOT</easy4j-spring-security-extension.version>
         <jackson-bom.version>3.2.1</jackson-bom.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
